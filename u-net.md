@@ -16,13 +16,10 @@ one of the most influential papers in segmentation
 ![Ciresan Overview](./ciresan_overview.png)
 
 #### Two Benefits of Ciresan's model
-1. U-Net can localize
+1. Enables localization
 2. Training data in terms of patches is much larger than the number of training images
 
-#### Two Benefits of Ciresan's model
-1. U-Net can localize
-2. Training data in terms of patches is much larger than the number of training images
-#### Two rawbacks of Ciresan's model
+#### Two Drawbacks of Ciresan's model
 1. Slow network, lot of redundancy due to overlapping patches
 2. Trade-off between localization accracy and use of context (smaller the window, more localization, but less context)
 -----
@@ -31,6 +28,14 @@ one of the most influential papers in segmentation
 ![Architecture of U-Net](./unet.png)
 1. Contraction path
    - Input is a grayscaled 572 x 572 image
+   - Learns 'What' is in the image, but loses 'Where' the entity is
 2. Expansion path
    - Output has two layers of 388 x 388, because it has two classes (size is reduced due to the input padding)
+   - Learns 'Where' the entity is
 3. Skip Connections
+   - Crop or pad the image from the contraction path to match the size
+
+- No FC layers
+- Only uses valid part of the convolution
+- **Mirror padding**: Padded a mirror symmetry instead of zero padding, in order to mitigate boundary effects and preserve context
+   - initial mirror padding reduces information loss in the copy&cropping step
