@@ -1,5 +1,4 @@
 ####Implementation by Aladdin Persson (https://www.youtube.com/watch?v=IHq1t7NxS8k) ####
-
 #Major difference : Valid Convolution (For simplification)
 
 

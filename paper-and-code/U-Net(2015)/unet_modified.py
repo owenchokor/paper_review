@@ -1,3 +1,6 @@
+####Implementation by Aladdin Persson (https://www.youtube.com/watch?v=IHq1t7NxS8k) ####
+#### Slight Change by Owen Cho ####
+
 import torch
 import torch.nn as nn
 import torchvision.transforms.functional as TF

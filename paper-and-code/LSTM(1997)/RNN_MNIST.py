@@ -47,3 +47,7 @@ test_data = DataLoader(
 )
 
 model = SimpleRNN(input_size, hidden_size, num_layers, num_classes)
+
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr = lr)
+
