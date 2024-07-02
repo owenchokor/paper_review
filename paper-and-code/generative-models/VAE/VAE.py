@@ -23,7 +23,7 @@ class VAE(nn.Module):
         #q_phi (z|x)
         h = self.relu(self.img_2hid(x))
         mu, sigma = self.hid_2mu(h), self.hid_2sigma(h)
-
+        
         return mu, sigma
 
     def decode(self, z):
@@ -41,5 +41,4 @@ class VAE(nn.Module):
 if __name__ == '__main__':
     x = torch.randn(4, 28*28)
     vae = VAE(input_dim=784)
-    print(vae(x))
-    print(vae(x)[0].shape)
+    print(vae(x).shape)
