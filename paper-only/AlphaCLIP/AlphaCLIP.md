@@ -40,7 +40,7 @@ SAM-> high quality pseudo mask
 ## Experiments
 1. Zero-Shot in ImageNet-S
 2. Zero-Shot REC(Referring Expression Comprehension): finding specific objects based on text
-3. OVD(Open Vocabulary detection): detects new classes, not used in training
+3. OVD(Open Vocabulary detection): detects new classes(no bbox), not used in training
 4. MLLM
 
 -----
@@ -53,3 +53,5 @@ SAM-> high quality pseudo mask
   - Cosine Similarity : Vector similarity
   - N-gram matching : continuous sequence
 - Datasets: MS-COCO, Visual Genome(labeled 100k), YFCC100M(100M, low quality)
+- CLIP loss : image - text softmax + text - image softmax
+- Related works : ReCLIP (Region proposal + CLIP), MaskAdaptedCLIP
